@@ -1,0 +1,26 @@
+name: Deploy PR
+on:
+  issue_comment:
+    types: [created]
+  push:
+    branches-ignore:
+      - master
+      - dev
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+jobs:
+  prepare:
+    name: Cleanup existing workflows
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel previous runs
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
+  code-checks:
+    name: Run code checks
+    needs: [prepare]
+    uses: ./.github/workflows/_code_checks.yaml

@@ -1,0 +1,24 @@
+name: Run code checks
+
+on: [workflow_call]
+
+jobs:
+  code-checks:
+    name: 'Run code checks'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: 'Setup node with cache'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.2
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Run linter
+        run: pnpm lint
+      - name: Run tests
+        run: pnpm test

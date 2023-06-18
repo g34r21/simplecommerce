@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -exu
+
+pnpm lint-staged
+pnpm tsc --noEmit
+pnpm test

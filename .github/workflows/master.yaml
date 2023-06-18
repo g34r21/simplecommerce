@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  code-checks:
+    name: Run code checks
+    uses: ./.github/workflows/_code_checks.yaml
+  release:
+    name: Create a new production release
+    needs: [code-checks]
+    uses: ./.github/workflows/_sem_release.yaml
+    secrets:
+      semantic_release_token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
