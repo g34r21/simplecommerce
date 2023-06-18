@@ -1,14 +1,15 @@
 <br />
 <div align="center">
-  <h1 align="center">Vite template</h1>
+  <h1 align="center">SimplEcommerce</h1>
 
   <p align="center">
-    Vite template uing typescript, react, vitest and linter best practices
-    <a href="https://github.com/g34r21/simplecommerce/issues">Report issue or improvements</a>
+    Simple yet powerfull ecommerce project example
+    <br />
+    <a href="https://simplecommerce.surge.sh">View Demo</a>
+    ·
+    <a href="https://github.com/g34r21/simplecommerce/issues">Request Feature</a>
   </p>
 </div>
-
-<!-- TABLE OF CONTENTS -->
 
 ## Table of Contents
 
@@ -18,21 +19,21 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#usage">Run it!</a></li>
+        <li><a href="#run-the-project!">Run the project!</a></li>
       </ul>
     </li>
-    <li><a href="#contact">Contact</a></li>
   </ol>
 
 ### Built With
 
-[![React][React-badge]][React-url] [![Vite][Vite-badge]][Vite-url] [![TypeScript][TypeScript-badge]][TypeScript-url]
+[![React][React-badge]][React-url] [![Vite][Vite-badge]][Vite-url] [![TypeScript][TypeScript-badge]][TypeScript-url] [![Redux][Redux-badge]][Redux-url]
 
 - React
 - Vite
 - Typescript
 - Vitest
+- Redux
+- Redux Saga
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
 
@@ -70,8 +71,6 @@
 
 ### Run the project!
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 1. Clone the repo
    ```sh
    git clone https://github.com/g34r21/simplecommerce.git
@@ -105,3 +104,5 @@ _Below is an example of how you can instruct your audience on installing and set
 [Vite-url]: https://vitejs.dev/
 [TypeScript-badge]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
 [TypeScript-url]: https://www.typescriptlang.org/
+[Redux-badge]: https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white
+[Redux-url]: https://redux.js.org/
