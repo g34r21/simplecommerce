@@ -1,0 +1,42 @@
+name: Deploy to surge
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: 'The deploy environment'
+        required: true
+        type: string
+      SURGE_DOMAIN:
+        description: 'The deployment domain'
+        required: true
+        type: string
+
+    secrets:
+      SURGE_TOKEN:
+        description: 'Surge auth token'
+        required: true
+
+jobs:
+  deploy:
+    environment: ${{ inputs.environment }}
+    name: 'Deploy to surge'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: 'Setup node with cache'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.2
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build
+        run: pnpm build
+      - name: Install surge
+        run: npm install -g surge
+      - name: Deploy to surge
+        run: surge ./dist ${{ inputs.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
