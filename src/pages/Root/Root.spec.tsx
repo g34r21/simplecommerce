@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import App from './App';
+import App from '.';
 
 describe('App', () => {
   test('should say hello world', () => {
