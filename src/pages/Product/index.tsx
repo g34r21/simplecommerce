@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import NotFound from '~/components/NotFound';
-import ProductCard from '~/components/ProductCard';
+import ProductView from '~/components/ProductView';
 import { getProductById } from '~/store/selectors/catalog';
 
 const ProductPage: FC = () => {
@@ -18,7 +18,7 @@ const ProductPage: FC = () => {
     return null;
   }
 
-  return <ProductCard productId={productId} />;
+  return <ProductView productId={productId} />;
 };
 
 export default ProductPage;
