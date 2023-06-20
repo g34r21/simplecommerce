@@ -7,7 +7,7 @@ import { DEFAULT_CURRENCY_FORMAT, DEFAULT_LOCALE } from '~/constants';
 import { rootReducer } from '~/store';
 import type { IProduct } from '~/types/catalog';
 
-import ProductCard from '.';
+import ProductView from '.';
 
 const productsData: Record<string, IProduct> = {
   'product-1': {
@@ -24,7 +24,7 @@ const productsData: Record<string, IProduct> = {
   },
 };
 
-describe('ProductCard', () => {
+describe('ProductView', () => {
   const { title, image, description, price } = {
     title: 'Foo',
     price: 12.5,
@@ -44,7 +44,7 @@ describe('ProductCard', () => {
     });
     render(
       <Provider store={store}>
-        <ProductCard productId="product-1" />
+        <ProductView productId="product-1" />
       </Provider>
     );
   });

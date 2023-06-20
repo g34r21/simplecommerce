@@ -9,6 +9,7 @@
   display: inline-block;
   margin: 10px 0;
   border: 1px solid var(--secondary-color);
+  position: relative;
 }
 
 .products-masonry__card--active {
@@ -18,4 +19,21 @@
 
 .products-masonry__image {
   width: 100%;
+}
+
+.products-masonry__badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.products-masonry__badge p {
+  color: white;
 }
