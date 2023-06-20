@@ -1,26 +1,51 @@
+import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
 import { expect } from 'vitest';
 
 import { DEFAULT_CURRENCY_FORMAT, DEFAULT_LOCALE } from '~/constants';
+import { rootReducer } from '~/store';
+import type { IProduct } from '~/types/catalog';
 
 import ProductCard from '.';
 
-describe('ProductCard', () => {
-  const { title, price, image, description } = {
+const productsData: Record<string, IProduct> = {
+  'product-1': {
     title: 'Foo',
     price: 12.5,
-    image: '',
     description: 'dummy description',
-  };
+    image: '',
+  },
+  'product-2': {
+    title: 'bar',
+    price: 25,
+    description: 'dummy description',
+    image: '',
+  },
+};
 
+describe('ProductCard', () => {
+  const { title, image, description, price } = {
+    title: 'Foo',
+    price: 12.5,
+    description: 'dummy description',
+    image: '',
+  };
   beforeEach(() => {
+    const store = configureStore({
+      reducer: rootReducer,
+      preloadedState: {
+        catalog: {
+          products: productsData,
+          loading: false,
+          error: null,
+        },
+      },
+    });
     render(
-      <ProductCard
-        title={title}
-        price={price}
-        description={description}
-        image={image}
-      />
+      <Provider store={store}>
+        <ProductCard productId="product-1" />
+      </Provider>
     );
   });
   test('should display product title', () => {

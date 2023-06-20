@@ -14,16 +14,11 @@ const ProductPage: FC = () => {
     return <NotFound />;
   }
 
-  const { title, price, description, image } = product;
+  if (!productId) {
+    return null;
+  }
 
-  return (
-    <ProductCard
-      title={title}
-      price={price}
-      description={description}
-      image={image}
-    />
-  );
+  return <ProductCard productId={productId} />;
 };
 
 export default ProductPage;

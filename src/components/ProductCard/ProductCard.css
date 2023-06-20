@@ -1,3 +1,23 @@
+.product__container {
+  position: relative;
+}
+
+.product__quantity-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+.product__quantity-badge p {
+  color: white;
+}
+
 .product__header {
   display: flex;
   align-items: center;
