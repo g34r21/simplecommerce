@@ -1,0 +1,7 @@
+.cart__total {
+  text-align: end;
+  font-weight: 500;
+  font-size: 1.25em;
+  margin: 20px 0;
+  display: block;
+}
