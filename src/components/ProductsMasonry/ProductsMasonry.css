@@ -1,0 +1,15 @@
+.products-masonry__container {
+  columns: 3 200px;
+  margin: 20px 0;
+}
+
+.products-masonry__card {
+  width: 100%;
+  padding: 5px;
+  display: inline-block;
+  margin: 10px 0;
+  border: 1px solid #bbbbbb;
+}
+.products-masonry__image {
+  width: 100%;
+}
