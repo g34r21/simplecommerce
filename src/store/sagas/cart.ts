@@ -166,7 +166,7 @@ function* updateCartProductQuantitySaga({
     getCartProductById(productId)
   )) as ReturnType<ReturnType<typeof getCartProductById>>;
 
-  if (!product) {
+  if (!product || !cartProduct) {
     yield put(updateCartError("Product doesn't exists"));
     return;
   }
@@ -182,7 +182,7 @@ function* updateCartProductQuantitySaga({
   >;
 
   const newSubtotal = newQuantity * price;
-  const newTotal = cartTotal + newSubtotal;
+  const newTotal = cartTotal - cartProduct.subtotal + newSubtotal;
 
   const updatedProduct = Object.assign(updatedCartProduct, {
     subtotal: newSubtotal,
