@@ -8,6 +8,7 @@
 .root-container__grid {
   display: grid;
   gap: 30px;
+  width: calc(100% - 30px);
   grid-template-columns: 60% 40%;
 }
 
@@ -26,8 +27,9 @@
 }
 
 @media (max-width: 900px) {
-  .root-container {
+  .root-container__grid {
     grid-template-columns: 100%;
+    width: 100%;
   }
 
   .left-side {
