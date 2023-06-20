@@ -1,7 +1,30 @@
-.primary-rule {
+.hr--primary {
   border-bottom: 1px solid var(--secondary-color);
 }
 
-.secondary-rule {
+.hr--secondary {
   border-bottom: 1px solid var(--tertiary-color);
+}
+
+.button--primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button--secondary {
+  background-color: #eeeeee;
+  color: black;
+}
+
+button {
+  padding: 15px;
+  font-size: 1.25em;
+  line-height: 0;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 10px 0;
 }
