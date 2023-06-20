@@ -9,7 +9,7 @@ const RootPage: FC = () => (
   <div className="root-container">
     <div className="left-side">
       <h2 className="store__heading">Store</h2>
-      <hr className="secondary-rule store__rule" />
+      <hr className="hr-secondary store__rule" />
       <ProductsMasonry />
     </div>
     <div className="right-side">

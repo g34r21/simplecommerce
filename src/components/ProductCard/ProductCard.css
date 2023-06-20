@@ -1,0 +1,30 @@
+.product__header {
+  display: flex;
+  align-items: center;
+}
+
+.product__buttons {
+  margin-left: auto;
+}
+
+.product__title {
+  margin: 0;
+}
+
+.product__image {
+  max-height: 250px;
+  padding: 10px;
+  height: 100%;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.product__description {
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.product__dot-spam {
+  margin: 0 5px;
+}
