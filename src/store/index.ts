@@ -1,12 +1,21 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import createSagaMiddleware from 'redux-saga';
 
 import rootSaga from './sagas';
 import cart from './slices/cart';
 import catalog from './slices/catalog';
 
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+const persistedCart = persistReducer(persistConfig, cart);
+
 export const rootReducer = combineReducers({
-  cart,
+  cart: persistedCart,
   catalog,
 });
 
@@ -22,3 +31,5 @@ export const store = configureStore({
 sagaMiddleware.run(rootSaga);
 
 export type RootState = ReturnType<typeof rootReducer>;
+
+export const persistor = persistStore(store);
