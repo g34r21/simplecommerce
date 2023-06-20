@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 import { rootReducer } from '~/store';
 import type { IProduct } from '~/types/catalog';
@@ -36,7 +37,9 @@ describe('ProductsMasonry', () => {
     });
     render(
       <Provider store={store}>
-        <ProductsMasonry />
+        <BrowserRouter>
+          <ProductsMasonry />
+        </BrowserRouter>
       </Provider>
     );
   });
