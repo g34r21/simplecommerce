@@ -1,0 +1,14 @@
+:root {
+  --primary-color: #b700c1;
+  --secondary-color: #bbbbbb;
+  --tertiary-color: #f4cff0;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin: 10px 0;
+}
+
+p {
+  color: var(--secondary-color);
+}
