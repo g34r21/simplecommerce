@@ -2,10 +2,13 @@
   width: 900px;
   max-width: 90%;
   margin: auto;
-  display: grid;
-  grid-template-columns: 60% 40%;
-  gap: 30px;
   padding: 20px;
+}
+
+.root-container__grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 60% 40%;
 }
 
 .store__heading {
